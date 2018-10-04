@@ -1,0 +1,26 @@
+class A {
+    hello() {
+        print "Hello";
+    }
+
+    foo() {
+        print "foo";
+        super.hello();
+    }
+}
+
+class B < A {
+    init(thing) {
+        this.thing = thing;
+    }
+
+    hello() {
+        super.foo();
+        print this.thing;
+    }
+}
+
+super.hello();
+
+var b = B("hgjh");
+b.hello();
